@@ -42,11 +42,11 @@ function App() {
       <ContentSection title={"Take Care"} text={"Crocs™ official online store has an exciting range of clogs, shoes,sandals, boots,flip flops,flats,sneakers for men,women & ki"} />
       <ContentSection title={"Take Care"} text={"Crocs™ official online store has an exciting range of clogs, shoes,sandals, boots,flip flops,flats,sneakers for men,women & ki"} />
       <CrossRevealSection face={FaceOne}
-      landscape={landscape}
-      name={"Chritian Guard"}
-      job={"Founder"}
-      sentenceOne={"We only launch"}
-      sentenceTwo={"what we love"}
+        landscape={landscape}
+        name={"Chritian Guard"}
+        job={"Founder"}
+        sentenceOne={"We only launch"}
+        sentenceTwo={"what we love"}
       />
     </>
   );
