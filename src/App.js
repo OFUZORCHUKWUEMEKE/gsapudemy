@@ -7,6 +7,7 @@ import CrossRevealSection from './components/CrossRevealSection';
 import FaceOne from './assets/images/faceOne.png'
 import landscape from './assets/images/landscapeOne.png'
 import landscapeTwo from './assets/images/landscapeTwo.png'
+import ProductSection from './components/ProductSection';
 
 
 const StyledHeroSection = styled.section`
@@ -40,6 +41,7 @@ function App() {
         <StyledTitle>Back to smooth and firm skin</StyledTitle>
         <ParallaxHeroSection />
       </StyledHeroSection>
+      <ProductSection/>
       <ContentSection title={"Take Care"} text={"Crocs™ official online store has an exciting range of clogs, shoes,sandals, boots,flip flops,flats,sneakers for men,women & ki"} />
       <CrossRevealSection face={FaceOne}
         landscape={landscape}

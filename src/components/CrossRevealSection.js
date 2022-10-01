@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 const StyledCrossRevealConatainer = styled.section`
    position: relative;
    padding-bottom: 56.25%;
@@ -119,7 +119,6 @@ const CrossRevealSection = ({ face, landscape, name, job, sentenceOne, sentenceT
                     </p>
                     <p className='author__name'>{name}</p>
                 </div>
-
             </div>
         </StyledCrossRevealConatainer>
     )
