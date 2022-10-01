@@ -71,7 +71,7 @@ const StyledCrossRevealConatainer = styled.section`
     }
 `
 
-const CrossRevealSection = ({ face, landscape, name, job, sentenceOne, sentenceTwo }) => {
+const CrossRevealSection = ({ face, landscape, name, job, sentenceOne, sentenceTwo,crossReveal }) => {
     // animate the container one way
     const containerRef = useRef()
     // animate the image the opposite way at the same time
@@ -93,15 +93,14 @@ const CrossRevealSection = ({ face, landscape, name, job, sentenceOne, sentenceT
                     end:()=>"+=" + triggerRef.current.offsetWidth,
                     scrub:true,
                     anticipatePin:1,
-                    markers:true,
                     pin:true
                 }
             }
         )
         // animate the container one way
-        crossRevealTween.fromTo(containerRef.current,{xPercent:100,x:0},{xPercent:0})
-        .fromTo(imageRef.current,{xPercent:-100,x:0},{xPercent:0},0)
-    },[])
+        crossRevealTween.fromTo(containerRef.current,{[crossReveal]:100,x:0},{[crossReveal]:0})
+        .fromTo(imageRef.current,{[crossReveal]:-100,x:0},{[crossReveal]:0},0)
+    },[crossReveal])
     return (
         <StyledCrossRevealConatainer ref={triggerRef}>
             <div className='crossRevealImage'>
