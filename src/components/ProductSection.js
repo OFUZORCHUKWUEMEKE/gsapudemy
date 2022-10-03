@@ -96,29 +96,97 @@ const ProductSection = () => {
 
     useEffect(() => {
         const scaleDownTween = gsap.timeline({
-          ease: "none",
-          scrollTrigger: {
-            trigger: textSectionTriggerRef.current,
-            start: "bottom bottom",
-            scrub: true,
-            // markers: true,
-          },
-        });
-    
-        scaleDownTween
-          .fromTo(
-            productWrapperRef.current,
-            {
-              scale: 2.8,
-              transformOrigin: "center top",
+            ease: "none",
+            scrollTrigger: {
+                trigger: textSectionTriggerRef.current,
+                start: "bottom bottom",
+                scrub: true,
+                // markers: true,
             },
-            {
-              scale: 2.2,
-            //   y: "-50%",
-            }
-          )
-          .to(productWrapperRef.current, { scale: 1, y: 0 });
-      }, []);
+        });
+
+        scaleDownTween
+            .fromTo(
+                productWrapperRef.current,
+                {
+                    scale: 2.8,
+                    transformOrigin: "center top",
+                },
+                {
+                    scale: 2.2,
+                    y: "-50%",
+                }
+            )
+            .to(productWrapperRef.current, { scale: 1, y: 0 });
+    }, []);
+
+    useEffect(() => {
+        const splitTween = gsap.timeline({
+            ease: "none",
+            scrollTrigger: {
+                trigger: productSectionTriggerRef.current,
+                start: "bottom bottom",
+                pin: true,
+                scrub: true,
+                anticipatePin: 1,
+                // markers: true,
+            },
+        });
+        splitTween
+            .to(boxRef.current, {
+                x: "-54%",
+                duration: 3,
+            })
+            .to(
+                nightCreamRef.current,
+                {
+                    x: "46%",
+                    duration: 3,
+                },
+                "-=3"
+            )
+            .from(
+                boxTextRef.current,
+                {
+                    autoAlpha: 0,
+                    duration: 0.3,
+                },
+                "-=3"
+            )
+            .from(
+                nightAndDayCreamTextRef.current,
+                {
+                    autoAlpha: 0,
+                    duration: 0.3,
+                },
+                "-=3"
+            )
+            .to(
+                boxTextRef.current,
+                {
+                    x: "-30%",
+                    duration: 3,
+                },
+                "-=3"
+            )
+            .to(
+                nightAndDayCreamTextRef.current,
+                {
+                    x: "16%",
+                    duration: 3,
+                },
+                "-=3"
+            )
+            .set(dayCreamRef.current, {
+                display: "block",
+            })
+            .from(dayCreamRef.current, {
+                autoAlpha: 0,
+                transformOrigin: "center center",
+                duration: 1,
+                scale: 0.95,
+            });
+    }, []);
     return (
         <>
             <StyledTextSection ref={textSectionTriggerRef}>
